@@ -1,0 +1,28 @@
+// Colors
+  //Primary
+    //Text 
+    $subHeading: hsl(276, 100%, 81%);
+    $chatLeft: hsl(276, 55%, 52%);
+    $chatRight: hsl(271, 15%, 43%);
+    $placedHolder: hsl(206, 6%, 79%);
+    $mainHeading: hsl(271, 36%, 24%);
+    $vdGrayish:hsl(270, 7%, 64%);
+
+    //Gradients
+    $lightMagenta: hsl(293, 100%, 63%);
+    $lightViolet: hsl(264, 100%, 61%);
+
+  //Secondary
+    $white: hsl(0, 0%, 100%);
+    $appBg: hsl(270, 20%, 96%);
+    $subBtn: hsl(271, 36%, 24%);
+    $radioBtn: hsl(289, 100%, 72%);
+
+
+// Media Queries
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// Typography
+$primaryFont: 'Rubik', sans-serif;

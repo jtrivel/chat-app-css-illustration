@@ -1,0 +1,312 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.cell {
+  border: 1rem solid v.$white;
+  border-radius: 3rem;
+  overflow: hidden;
+  font-size: 1rem;
+  max-width: 34rem;
+  width: 95%;
+  margin-inline: auto;
+  box-shadow: 
+  rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, 
+  rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  overflow-x: hidden;
+
+  &__screen {
+    width: 100%;
+    background-color: v.$appBg;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  /*******************TOP*************/
+  &__top {
+    padding: 2rem;
+    background-image: linear-gradient(
+      to left bottom,
+      v.$lightMagenta,
+      v.$lightViolet
+    );
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 15rem;
+      height: 4rem;
+      background-color: v.$white;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 0 0 1rem 1rem;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__leftarrow {
+    font-size: 2rem;
+    color: v.$subHeading;
+  }
+
+  &__img {
+    width: 5rem;
+    border-radius: 50%;
+    border: 2px solid v.$white;
+  }
+
+  &__name {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: v.$appBg;
+  }
+
+  &__status {
+    color: v.$subHeading;
+  }
+
+  &__dots {
+    font-size: 1.6rem;
+    color: v.$subHeading;
+  }
+
+  /*******************CHAT TOP*************/
+  &__chats {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+  }
+
+  &__chatup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__text {
+    padding: 1rem;
+    background-color: hsla(276, 100%, 81%, 0.198);
+    border-radius: 1rem 1rem 1rem .3rem;
+    max-width: 55%;
+    color: v.$chatLeft;
+    font-weight: 500;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    &-c{
+      max-width: 80%;
+      background-color: v.$white;
+      color: v.$chatRight;
+      font-weight: 500;
+      border-radius: 1rem 1rem .3rem 1rem;
+      animation: slidemove .7s forwards 6s ;
+      opacity: 0;
+    }
+    &-ctwo{
+      max-width: 80%;
+      background-color: v.$white;
+      color: v.$chatRight;
+      font-weight: 500;
+      border-radius: 1rem 1rem .3rem 1rem;
+      animation: slidemove .7s forwards 7s ;
+      opacity: 0;
+    }
+
+    &-for {
+      animation: slidemove .7s forwards 8s ;
+      opacity: 0;
+    }
+
+
+    &-fir {
+      animation: slidemove .7s forwards 1s ;
+      opacity: 0;
+    }
+    &-sec {
+      animation: slidemove .7s forwards 2s ;
+      opacity: 0;
+    }
+  }
+
+  &__middle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &__images {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__dog {
+    width: 6rem;
+    border-radius: 1rem;
+    &-fir {
+      animation: slidemove .7s forwards 5s ;
+      opacity: 0;
+    }
+    &-sec {
+      animation: slidemove .7s forwards 4s ;
+      opacity: 0;
+    }
+    &-tri {
+      animation: slidemove .7s forwards 3s ;
+      opacity: 0;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__gradients {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__gradient {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 70%;
+    background-image: linear-gradient(
+      45deg,
+      v.$lightMagenta,
+      v.$lightViolet
+    );
+    padding: 1rem;
+    border-radius: 1rem 1rem 1rem .3rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    &-f {
+      animation: slidemove .7s forwards 9s ;
+      opacity: 0;
+    }
+    &-s {
+      animation: slidemove .7s forwards 10s ;
+      opacity: 0;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  &__circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border: 1px solid v.$subHeading;
+    border-radius: 50%;
+  }
+
+  &__walk {
+    color: v.$white;
+  }
+
+  &__price {
+    font-size: 1.6rem;
+    color: v.$white;
+    font-weight: 700;
+  }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: v.$white;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+  }
+
+  &__placeholder {
+    padding: 0 1rem;
+    color: v.$placedHolder;
+  }
+
+  &__arrowright {
+    color: v.$white;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: v.$white;
+    z-index: 1;
+    &::after {
+      padding: 1rem;
+      position: absolute;
+      content: "";
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: v.$subBtn;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  }
+
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    @include m.desktop {
+      max-width: 45rem;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    font-size: 4rem;
+    color: v.$mainHeading;
+  }
+
+  &__subtitle {
+    text-align: center;
+    line-height: 1.7;
+    color: v.$vdGrayish;
+    @include m.tablet {
+      text-align: left;
+    }
+  }
+}

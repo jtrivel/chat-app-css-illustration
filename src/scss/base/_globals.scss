@@ -1,0 +1,84 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: v.$primaryFont;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background-color: v.$appBg;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  @include m.desktop {
+    align-items: center;
+    justify-content: center;
+  }
+  &:before {
+    position: absolute;
+    content: "";
+    height: 60vh;
+    width: 70vw;
+    background-image: linear-gradient(
+      to bottom right,
+      v.$lightMagenta,
+      v.$lightViolet, 
+    );
+    left: -5rem;
+    top: 0;
+    z-index: -1;
+    border-radius: 0 0 100rem 0;
+    @include m.tablet {
+      width: 40vw;
+    }
+
+    @include m.desktop {
+      height: 85vh;
+      left: -20rem;
+      border-radius: 0 0 100rem 100rem;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-color: v.$subHeading;
+    width: 70vw;
+    height: 60vh;
+    z-index: -1;
+    right: -5rem;
+    bottom: 0;
+    opacity: .1;
+    border-radius: 100rem 0 0 0 ;
+
+    @include m.tablet {
+      width: 40vw;
+    }
+    
+    @include m.desktop {
+    border-radius: 100rem 100rem 0 0 ;
+    right: -20rem;
+    height: 85vh;
+    }
+  }
+}
+
+.container {
+  max-width: 38rem;
+  width: 95%;
+  margin-inline: auto;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  @include m.desktop {
+    max-width: 140rem;
+    @include m.grid(2, 1rem);
+  }
+}
