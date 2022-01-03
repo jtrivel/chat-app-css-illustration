@@ -1,16 +1,90 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
 
+
+
+.cell {
+  animation: cellmove 1s forwards ;
+
+  &__text {
+    &-c {
+      animation: slidemove .7s forwards 6s ;
+    }
+    &-ctwo{
+      animation: slidemove .7s forwards 7s ;
+    }
+    &-for {
+      animation: slidemove .7s forwards 8s ;
+    }
+    &-fir {
+      animation: slidemove .7s forwards 1s ;
+    }
+    &-sec {
+      animation: slidemove .7s forwards 2s ;
+    }
+  }
+
+  &__gradient {
+    &-f {
+      animation: slidemove .7s forwards 9s ;
+    }
+    &-s {
+      animation: slidemove .7s forwards 10s ;
+    }
+  }
+
+  &__title {
+    &::before {
+      animation: moveBox 2s cubic-bezier(0, 0.5, 0.5, 0) forwards;
+    }
+  }
+
+
+  &__subtitle {
+    animation: moveText 2s 2s ease forwards;
+  }
+
+}
+
+
+
 @keyframes slidemove {
   0% {
     transform: skew(53deg) translateX(-50rem);
-    opacity: 0;
+    
   }
 
   100% {
     transform: skew(0);
     opacity: 1;
   }
+}
 
+@keyframes cellmove{
+  0% {
+    transform: translateY(-100rem);
+    
+  }
 
+  100% {
+    transform: skew(0);
+    opacity: 1;
+    
+  }
+}
+
+@keyframes moveBox {
+  0% {
+    left: -20rem;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes moveText {
+  to {
+    opacity: 1;
+  }
 }

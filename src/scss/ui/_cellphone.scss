@@ -12,7 +12,9 @@
   box-shadow: 
   rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, 
   rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  overflow-x: hidden;
+  overflow: hidden;
+  opacity: 0;
+  
 
   &__screen {
     width: 100%;
@@ -115,7 +117,6 @@
       color: v.$chatRight;
       font-weight: 500;
       border-radius: 1rem 1rem .3rem 1rem;
-      animation: slidemove .7s forwards 6s ;
       opacity: 0;
     }
     &-ctwo{
@@ -124,22 +125,17 @@
       color: v.$chatRight;
       font-weight: 500;
       border-radius: 1rem 1rem .3rem 1rem;
-      animation: slidemove .7s forwards 7s ;
       opacity: 0;
     }
 
     &-for {
-      animation: slidemove .7s forwards 8s ;
       opacity: 0;
     }
 
-
     &-fir {
-      animation: slidemove .7s forwards 1s ;
       opacity: 0;
     }
     &-sec {
-      animation: slidemove .7s forwards 2s ;
       opacity: 0;
     }
   }
@@ -210,12 +206,10 @@
     padding: 1rem;
     border-radius: 1rem 1rem 1rem .3rem;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    &-f {
-      animation: slidemove .7s forwards 9s ;
+    &-f {     
       opacity: 0;
     }
-    &-s {
-      animation: slidemove .7s forwards 10s ;
+    &-s { 
       opacity: 0;
     }
   }
@@ -299,12 +293,23 @@
   &__title {
     font-size: 4rem;
     color: v.$mainHeading;
+    position: relative;
+    overflow: hidden;
+    &::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: v.$mainHeading;
+      
+    }
   }
 
   &__subtitle {
     text-align: center;
     line-height: 1.7;
     color: v.$vdGrayish;
+    opacity: 0;
     @include m.tablet {
       text-align: left;
     }
